@@ -1,9 +1,11 @@
 {
+  "name": "fast-ftl",
   "scripts": {
     "dev": "babel src -w -d dist -s -x .js",
     "build": "babel src -d dist -s -x .js",
     "release": "git add -A && git commit -m \"Release\" && git push && npm run build && npm publish"
   },
+  "main": "./dist/index.js",
   "devDependencies": {
     "babel-cli": "^6.11.4",
     "babel-plugin-transform-runtime": "^6.15.0",
