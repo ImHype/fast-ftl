@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: json-simple-1.1.jar fastjson-1.1.30.jar freemarker.jar
+Main-Class: com.june.fastftl.Main
+
