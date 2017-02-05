@@ -58,7 +58,7 @@ public class Server {
     }
 
     @SuppressWarnings("unchecked")
-    public Result resolve(String _msg, Render render) throws Exception {
+    private Result resolve(String _msg, Render render) throws Exception {
         Result _result;
         Map<String, Object> _jsonObject;
 
