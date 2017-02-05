@@ -3,4 +3,4 @@
  */
 "use strict";
 var Builder = require('../dist/builder').default;
-var builder = new Builder();
+var builder = new Builder({});

@@ -1,37 +1,46 @@
 import Render from './render/Render';
 import Builder from './builder';
 import Events from 'events';
+import {findPort} from './util';
 
 class Index extends Events {
     constructor(options = {}) {
         super();
         this.options = options;
-        this.start().then(() => {
-            this.started = !0;
-            this.emit('started');
+        findPort()
+            .then(port => {
+                return this.start(port);
+            })
+            .catch((err) => {
+                log(`[E] ${err}`);
+                process.exit(-1);
+            })
+            .then(() => {
+                this.started = !0;
+                this.emit('started');
+            });
+    }
+
+    start(port) {
+        this.render = new Render({
+            port
         });
+        return new Builder(this.options).build(port);
     }
 
-    start() {
-        this.render = new Render();
-        return new Builder(this.options).build();
-    }
-
-    parse(tpl) {
+    parse(...args) {
         if (!this.started) {
             return new Promise(resolve => {
-                this.on('started', () => {
-                    resolve();
-                });
+                this.on('started', resolve);
             }).then(() => {
-                return this.parseProxy(tpl);
+                return this.parseProxy(...args);
             });
         }
-        return this.parseProxy(tpl);
+        return this.parseProxy(...args);
     }
 
-    parseProxy(tpl) {
-        return this.render.parse(tpl);
+    parseProxy(...args) {
+        return this.render.parse(...args);
     }
 }
 

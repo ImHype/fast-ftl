@@ -4,11 +4,13 @@
 "use strict";
 var Index = require('../dist/index').default;
 
-var index = Index({});
+var index = Index({
+    root: "/Users/june/Desktop/Projects/kaola/haitaowap/src/main/webapp/WEB-INF/template/"
+});
 
-setTimeout(()=>{
-    index.parse('test.ftl')
-        .then(data => {
-            console.log(data);
-        });
-}, 1000)
+index.parse('test.ftl', {
+    a: "1"
+})
+    .then(data => {
+        console.log(data);
+    });

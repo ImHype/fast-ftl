@@ -1,5 +1,6 @@
 {
   "name": "fast-ftl",
+  "version": "0.1.0",
   "scripts": {
     "dev": "babel src -w -d dist -s -x .js",
     "build": "babel src -d dist -s -x .js",
@@ -13,6 +14,7 @@
     "babel-preset-stage-3": "^6.22.0"
   },
   "dependencies": {
-    "babel-runtime": "^6.22.0"
+    "babel-runtime": "^6.22.0",
+    "portfinder": "^1.0.12"
   }
 }

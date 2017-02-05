@@ -2,34 +2,46 @@
  * Created by june on 2017/1/23.
  */
 import {spawn} from 'child_process';
+import {log} from '../util';
+import {resolve} from 'path';
 
 export default class Builder {
-    constructor({root, port}) {
+    constructor({root}) {
+        if (!root) {
+            throw new Error("root must be string");
+        }
         this.root = root;
-        this.port = port;
-        this.bindExit();
     }
-    build() {
+
+    build(port) {
+        const jarFile = resolve(__dirname, '../../lib/Fast-FTL.jar');
         const cmd = this.cmd = spawn('java', [
             '-jar',
-            '/Users/june/Desktop/Projects/global-online/Fast-FTL/out/artifacts/Fast_FTL_jar/Fast-FTL.jar',
-            this.root || '/Users/june/Desktop/Projects/kaola/haitaowap/src/main/webapp/WEB-INF/template',
+            jarFile,
+            this.root,
+            port
         ]);
 
+        cmd.stderr.on('data', data => {
+            log(data.toString());
+        });
+
+        this.bindExit();
+
         return new Promise(resolve => {
-            cmd.stdout.on('data', (data) => {
-                if (~data.indexOf('success')) {
-                    resolve();
-                } else {
-                    console.log(data.toString());
+            cmd.stdout.on('data', data => {
+                log(data);
+                if (~data.indexOf('built')) {
+                    setTimeout(resolve, 500);
                 }
             });
         });
     }
+
     bindExit() {
         process.on('SIGINT', () => {
             this.cmd.kill('SIGHUP');
-            console.log('[I] killed fast-ftl!');
+            log('Kill Success!');
             process.exit(0);
         });
     }

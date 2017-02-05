@@ -43,10 +43,7 @@ export default class Client extends Events {
          * @type {*}
          */
         const msg = this.msgQueue.shift();
-        this.emit('recieved', {
-            msg,
-            res
-        });
+        this.emit('recieved', JSON.parse(res));
 
         /**
          * 发送下一条 信息
