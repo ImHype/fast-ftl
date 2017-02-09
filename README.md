@@ -6,7 +6,9 @@
 > Not Only Freemarker integration for NodeJS，but also the service of Freemarker integration.
 
 ## How to use
-  - `npm i freemarker -save`
+```bash
+npm i freemarker -save
+```
 
 #### Render template
 ```javascript
