@@ -7,7 +7,7 @@
 
 ## How to use
 ```bash
-npm i freemarker -save
+npm i freemarker --save
 ```
 
 #### Render template
