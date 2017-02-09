@@ -4,12 +4,11 @@
 
 
 > Not Only Freemarker integration for NodeJS，but also the service of Freemarker integration.
-## How to use
 
+## How to use
   - `npm i freemarker -save`
 
 #### Render template
-
 ```javascript
 const Freemarker = require('fast-ftl');
 
