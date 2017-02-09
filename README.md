@@ -1,6 +1,30 @@
 # Fast-FTL
-> Fast-FTL是Freemarker语法的JS解析器，也是Freemarker语法解析服务
 
+[![NPM version][npm-image]][npm-url]
+
+
+> Not Only Freemarker integration for NodeJS，but also the service of Freemarker integration.
+## How to use
+
+  - `npm i freemarker -save`
+
+#### Render template
+
+```javascript
+const Freemarker = require('fast-ftl');
+
+const freemarker = new Freemarker({
+  root: "/path/to/template/"
+});
+
+freemarker.parse('test.ftl', {
+    a: "1"
+}).then(data => {
+  console.log(data);
+}).catch(e => {
+  // reject e
+});
+```
 ## LICENSE
 [![license][license-image]][license-url]
 
