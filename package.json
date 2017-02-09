@@ -1,7 +1,13 @@
 {
   "name": "fast-ftl",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "freemarker render",
+  "files": [
+    "dist",
+    "lib",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
     "dev": "babel src -w -d dist -s -x .js",
     "build": "babel src -d dist -s -x .js",
