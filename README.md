@@ -29,5 +29,8 @@ freemarker.parse('test.ftl', {
 ## LICENSE
 [![license][license-image]][license-url]
 
+
+[npm-url]: https://npmjs.org/package/fast-ftl
+[npm-image]: https://img.shields.io/npm/v/fast-ftl.svg
 [license-url]: https://github.com/ImHype/Fast-FTL/blob/master/LICENSE
 [license-image]: https://img.shields.io/github/license/imhype/Fast-FTL.svg
