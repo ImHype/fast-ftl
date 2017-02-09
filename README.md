@@ -1,5 +1,5 @@
 # Fast-FTL
-> 与其说是 Freemarker 语法的 JS 解析器，不如说是一个关于 Freemarker 服务的生产消费模式。
+> Fast-FTL是Freemarker语法的JS解析器，也是Freemarker语法解析服务
 
 ## LICENSE
 [![license][license-image]][license-url]
