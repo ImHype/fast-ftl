@@ -1,6 +1,6 @@
 {
   "name": "fast-ftl",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "freemarker render",
   "files": [
     "dist",
@@ -11,7 +11,8 @@
   "scripts": {
     "dev": "babel src -w -d dist -s -x .js",
     "build": "babel src -d dist -s -x .js",
-    "release": "npm run build && npm publish"
+    "release": "npm run build && npm publish",
+    "test": "node test/test.index"
   },
   "main": "./dist/index.js",
   "devDependencies": {

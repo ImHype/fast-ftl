@@ -5,12 +5,15 @@
 var Index = require('../dist/index').default;
 
 var index = Index({
-    root: "/Users/june/Desktop/Projects/kaola/haitaowap/src/main/webapp/WEB-INF/template/"
+    root: __dirname
 });
 
-index.parse('test.ftl', {
-    a: "1"
-})
-    .then(data => {
-        console.log(data);
-    });
+setTimeout(function () {
+  index.parse('test.ftl', {
+      YourName: "Jack"
+  }).then(data => {
+      console.log(data);
+  }).catch(e => {
+      console.log(e)
+  });
+}, 500);

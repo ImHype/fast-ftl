@@ -2,17 +2,18 @@
  * Created by june on 2017/1/27.
  */
 import portfinder from 'portfinder';
-
+import {spawn} from 'child_process';
 const isDev = process.env.NODE_ENV === 'development';
-const log = (data) => {
-    if (!isDev && (~data.indexOf('[D]'))) {
+
+function log(data) {
+    if (!isDev && (!~data.indexOf('[E]'))) {
         return -1;
     }
     console.log(data.toString('UTF-8').replace(/\n/, ''));
     return 0;
-};
+}
 
-const findPort = () => {
+function findPort() {
     return new Promise((resolve, reject)=>{
         portfinder
             .getPort(function (err, port) {
@@ -22,9 +23,17 @@ const findPort = () => {
                 resolve(port);
             });
     })
-};
+}
 
+/**
+*/
+function invokeJar(jarFile, args) {
+  return spawn('java', [
+      '-jar', ...[jarFile, ...args]
+  ]);
+}
 export {
     log,
-    findPort
+    findPort,
+    invokeJar
 }

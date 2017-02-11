@@ -67,6 +67,7 @@ export default class Client extends Events {
 
     requestProxy({msg}) {
         this.socket.connect({
+            host: '127.0.0.1',
             port: this.port
         }, () => {
             this.socket.end(msg);

@@ -1,49 +1,28 @@
 import Render from './render/Render';
-import Builder from './builder';
-import Events from 'events';
-import {findPort} from './util';
+import builder from './builder';
 
-class Index extends Events {
-    constructor(options = {}) {
-        super();
-        this.options = options;
-        findPort()
-            .then(port => {
-                return this.start(port);
-            })
-            .catch((err) => {
-                log(`[E] ${err}`);
-                process.exit(-1);
-            })
-            .then(() => {
-                this.started = !0;
-                this.emit('started');
-            });
-    }
-
-    start(port) {
-        this.render = new Render({
-            port
-        });
-        return new Builder(this.options).build(port);
-    }
-
-    parse(...args) {
-        if (!this.started) {
-            return new Promise(resolve => {
-                this.on('started', resolve);
-            }).then(() => {
-                return this.parseProxy(...args);
-            });
+class Index {
+    constructor({root}) {
+        if (!root) {
+            throw new Error("root must be string");
         }
-        return this.parseProxy(...args);
+        builder(root).then(this.createRender.bind(this));
     }
 
-    parseProxy(...args) {
-        return this.render.parse(...args);
+    createRender(port) {
+      this.render = new Render({
+          port
+      });
+    }
+
+    parse (...args) {
+      if (!this.render) {
+         return Promise.resolve({content: '不好意思哟，服务还在启动中，过一秒再来吧~'});
+      }
+      return this.render.parse(...args);
     }
 }
 
-export default (options) => {
-    return new Index(options);
+export default (...args) => {
+    return new Index(...args);
 }

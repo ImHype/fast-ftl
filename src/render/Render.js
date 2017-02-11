@@ -24,5 +24,4 @@ export default class Render extends Events{
     static _getParsedEventName(tpl) {
         return `Parsed:${tpl}`
     }
-
 }
