@@ -38,11 +38,9 @@ public class Server {
             BufferedReader _bufferedReader = new BufferedReader(new InputStreamReader(_socket.getInputStream()));
 
             String _msg = _bufferedReader.readLine();
-            System.out.println("[D] Recieved: " + _msg);
 
             Result _result = this.resolve(_msg, render);
             String _returnValue = _result.toString();
-            System.out.println("[D] Return: " + _returnValue);
             _printWriter.write(_returnValue);
 
             try {
@@ -67,11 +65,10 @@ public class Server {
         try {
             _jsonObject = (Map<String, Object>) jsonParser.parse(_msg);
         } catch (ParseException e) {
-            throw new Exception("[D] Program Error!");
+            throw new Exception("[I] JSON Parsed Error!");
         }
 
         String _template = String.valueOf(_jsonObject.get("template"));
-        System.out.println("[D] Template: " + _template);
 
         Map<String, Object> _mockData;
         try {

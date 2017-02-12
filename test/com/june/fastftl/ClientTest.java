@@ -5,6 +5,6 @@ package com.june.fastftl;
  */
 public class ClientTest {
     public static void main(String[] args){
-        new Client().request(5789, "{\"template\":\"test.ftl\",\"data\":{\"a\": \"Hello\"}}");
+        new Client().request(8005, "{\"template\":\"test.ftl\",\"data\":{\"a\": \"Hello\"}}");
     }
 }
