@@ -1,25 +1,33 @@
-import Render from './render/Render';
+import Render from './render';
 import builder from './builder';
+import Events from 'events';
 
-class Index {
+class Index extends Events {
     constructor({root}) {
+        super();
         if (!root) {
             throw new Error("root must be string");
         }
-        builder(root).then(this.createRender.bind(this));
+        builder(root)
+            .then(this.createRender.bind(this))
     }
 
     createRender(port) {
-      this.render = new Render({
-          port
-      });
+        this.render = new Render({
+            port
+        });
+        this.emit('started');
     }
 
-    parse (...args) {
-      if (!this.render) {
-         return Promise.resolve({content: '不好意思哟，服务还在启动中，过一秒再来吧~'});
-      }
-      return this.render.parse(...args);
+    parse(...args) {
+        if (!this.render) {
+            return new Promise(resolve => {
+                this.once('started', () => {
+                    resolve(this.render.parse(...args));
+                });
+            });
+        }
+        return this.render.parse(...args);
     }
 }
 

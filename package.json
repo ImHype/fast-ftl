@@ -1,7 +1,7 @@
 {
   "name": "fast-ftl",
   "version": "1.0.0",
-  "description": "freemarker render",
+  "description": "The Freemaker parsing service in Node.js",
   "files": [
     "dist",
     "lib",

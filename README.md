@@ -3,29 +3,41 @@
 [![NPM version][npm-image]][npm-url]
 
 
-> Not Only Freemarker integration for NodeJS，but also the service of Freemarker integration.
+> The Freemaker parsing service in Node.js
 
 ## How to use
 ```bash
-npm i freemarker --save
+npm i fast-ftl --save
 ```
 
-#### Render template
+#### Import in es6
 ```javascript
-const Freemarker = require('fast-ftl');
+import FastFTL from 'fast-ftl';
+```
 
-const freemarker = new Freemarker({
-  root: "/path/to/template/"
-});
+#### Import in es5
+```javascript
+var FastFTL = require('fast-ftl').default;
+```
 
-freemarker.parse('test.ftl', {
-    a: "1"
-}).then(data => {
-  console.log(data);
-}).catch(e => {
-  // reject e
+#### Init Fast-FTL
+```javascript
+var fastFtl = FastFTL({
+    root: [__dirname, `${__dirname}/pages`].join(',') // Support MultiTemplateLoader
 });
 ```
+
+#### Parse file
+```javascript
+fastFtl.parse('test.ftl', {
+    YourName: "Jack"
+}).then(data => {
+    console.log(data);
+}).catch(e => {
+    console.log(e)
+});
+```
+
 ## LICENSE
 [![license][license-image]][license-url]
 
