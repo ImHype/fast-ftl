@@ -13,3 +13,11 @@ fastFtl.parse('test.ftl', {
 }).catch(e => {
     console.log(e)
 });
+
+fastFtl.parse('test.ftl', {
+    YourName: "June"
+}).then(data => {
+    console.log(data);
+}).catch(e => {
+    console.log(e)
+});
