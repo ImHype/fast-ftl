@@ -30,7 +30,7 @@ var fastFtl = FastFTL({
 #### Parse file
 ```javascript
 fastFtl.parse('test.ftl', {
-    YourName: "Jack"
+    YourName: ‘Jack’
 }).then(data => {
     console.log(data);
 }).catch(e => {
