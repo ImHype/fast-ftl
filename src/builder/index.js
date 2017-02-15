@@ -2,7 +2,7 @@
  * Created by june on 2017/1/23.
  */
 import createService from './service';
-import {findPort, javaVersion} from '../util';
+import {findPort, javaVersion, log} from '../util';
 
 export default function builder(root) {
     return javaVersion()
