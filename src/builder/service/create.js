@@ -16,7 +16,8 @@ function serviceBuildPromise(service) {
 }
 
 function createService(args) {
-    const jarFile = resolve(__dirname, '../../../lib/Fast-FTL.jar');
+   const jarFile = resolve(__dirname, '../../../lib/Fast-FTL.jar');
+//     const jarFile = resolve(__dirname, 'E:\\Fast-FTL -Java\\out\\artifacts\\Fast_FTL_jar\\Fast-FTL.jar');
     return invokeJar(jarFile, args);
 }
 

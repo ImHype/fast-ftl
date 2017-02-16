@@ -14,6 +14,11 @@ export default class Render extends Events {
     }
 
     parse(template, data) {
+        /**
+         * win
+         * @type {*}
+         */
+        template = template.replace(/\\/g, '/');
         this.client.request(
             JSON.stringify({template, data})
         );
