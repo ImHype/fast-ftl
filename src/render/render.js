@@ -1,7 +1,7 @@
 /**
  * Created by june on 2017/1/23.
  */
-import Client from './Client';
+import Client from './client';
 import Events from 'events';
 
 export default class Render extends Events {
