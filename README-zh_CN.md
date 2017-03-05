@@ -1,8 +1,8 @@
 # Fast-FTL
 
-[![NPM version][npm-image]][npm-url]
+[![NPM version][npm-image]] [npm-url][![Build Status][travis-image]][travis-url]
 
-> 基于 Socket 服务的 Freemarker 解析器
+基于 Socket 服务的 Freemarker 解析器
 
 ## 如何开始？
 ```bash
@@ -56,3 +56,5 @@ fastFtl.parse(relativeToRoot, mockData).then(data => {
 [npm-image]: https://img.shields.io/npm/v/fast-ftl.svg
 [license-url]: https://github.com/ImHype/Fast-FTL/blob/master/LICENSE
 [license-image]: https://img.shields.io/github/license/imhype/Fast-FTL.svg
+[travis-image]: https://travis-ci.org/ImHype/Fast-FTL.svg?branch=master
+[travis-url]: https://travis-ci.org/ImHype/Fast-FTL

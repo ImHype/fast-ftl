@@ -1,6 +1,6 @@
 # Fast-FTL
 
-[![NPM version][npm-image]][npm-url][![Build Status][travis-image]][travis-url]
+[![NPM version][npm-image]] [npm-url][![Build Status][travis-image]][travis-url]
 
 The Freemaker parsing service in Node.js
 
@@ -13,25 +13,25 @@ npm i fast-ftl --save
 #### Step 1 - Import 
 ##### 1. Import in es2015+
 ```javascript
-import FastFTL from 'fast-ftl';
+import FastFTL from "fast-ftl";
 ```
 
 ##### 2. Require in CommonJS
 ```javascript
-var FastFTL = require('fast-ftl').default;
+var FastFTL = require("fast-ftl").default;
 ```
 
 #### Step 2 - Init Fast-FTL
 ```javascript
 var fastFtl = FastFTL({
-    root: [__dirname, `${__dirname}/pages`].join(',') // Support MultiTemplateLoader
+    root: [__dirname, `${__dirname}/pages`].join(",") // Support MultiTemplateLoader
 });
 ```
 
 #### Step 3 - Parse file
 ```javascript
-fastFtl.parse('test.ftl', {
-    YourName: ‘Jack’
+fastFtl.parse("test.ftl", {
+    YourName: "Jack"
 }).then(data => {
     console.log(data);
 }).catch(e => {
@@ -51,5 +51,5 @@ fastFtl.parse('test.ftl', {
 [npm-image]: https://img.shields.io/npm/v/fast-ftl.svg
 [license-url]: https://github.com/ImHype/Fast-FTL/blob/master/LICENSE
 [license-image]: https://img.shields.io/github/license/imhype/Fast-FTL.svg
-[travis-image]: https://travis-ci.org/imhype/Fast-FTL.svg?branch=master
-[travis-url]: https://travis-ci.org/imhype/Fast-FTL
+[travis-image]: https://travis-ci.org/ImHype/Fast-FTL.svg?branch=master
+[travis-url]: https://travis-ci.org/ImHype/Fast-FTL
