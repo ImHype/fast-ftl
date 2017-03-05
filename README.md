@@ -1,6 +1,6 @@
 # Fast-FTL
 
-[![NPM version][npm-image]] [npm-url][![Build Status][travis-image]][travis-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
 
 The Freemaker parsing service in Node.js
 
