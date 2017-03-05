@@ -1,6 +1,6 @@
 # Fast-FTL
 
-[![NPM version][npm-image]] [npm-url][![Build Status][travis-image]][travis-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
 
 基于 Socket 服务的 Freemarker 解析器
 
