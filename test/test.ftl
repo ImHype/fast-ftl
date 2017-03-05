@@ -1,1 +1,1 @@
-Hello, ${YourName!''}
+你好, ${name}

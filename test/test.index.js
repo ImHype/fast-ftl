@@ -4,20 +4,12 @@
 "use strict";
 var FastFTL = require('../dist/index').default;
 var fastFtl = FastFTL({
-    root: __dirname
+    root: "E:\\haitaowap\\src\\main\\webapp\\WEB-INF\\template"
 });
-fastFtl.parse('test.ftl', {
-    YourName: "Jack"
+fastFtl.parse('pages/index/index.ftl', {
+    name: "Jack"
 }).then(data => {
     console.log(data);
 }).catch(e => {
-    console.log(e)
-});
-
-fastFtl.parse('test.ftl', {
-    YourName: "June"
-}).then(data => {
-    console.log(data);
-}).catch(e => {
-    console.log(e)
+    console.log(e.toString('utf-8'))
 });
