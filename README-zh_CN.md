@@ -8,7 +8,7 @@
 ```bash
 npm i fast-ftl --save
 ```
-### 引入 
+### 第 1 步、引入 
 #### 1. es2015+ 中引入
 ```javascript
 import FastFTL from "fast-ftl";
@@ -19,7 +19,7 @@ import FastFTL from "fast-ftl";
 var FastFTL = require("fast-ftl").default;
 ```
 
-#### 初始化
+#### 第 2 步、初始化
 ```javascript
 var path = require("path");
 var fastFtl = FastFTL({
@@ -30,7 +30,7 @@ var fastFtl = FastFTL({
 });
 ```
 
-#### 调用
+#### 第 3 步、调用
 ```javascript
 var relativeToRoot = "test.ftl"; // 相对 "root" 的路径
 var mockData = { 

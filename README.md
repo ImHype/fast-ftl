@@ -10,7 +10,7 @@ The Freemaker parsing service in Node.js
 ```bash
 npm i fast-ftl --save
 ```
-#### Import 
+#### Step 1 - Import 
 ##### 1. Import in es2015+
 ```javascript
 import FastFTL from 'fast-ftl';
@@ -21,14 +21,14 @@ import FastFTL from 'fast-ftl';
 var FastFTL = require('fast-ftl').default;
 ```
 
-#### Init Fast-FTL
+#### Step 2 - Init Fast-FTL
 ```javascript
 var fastFtl = FastFTL({
     root: [__dirname, `${__dirname}/pages`].join(',') // Support MultiTemplateLoader
 });
 ```
 
-#### Parse file
+#### Step 3 - Parse file
 ```javascript
 fastFtl.parse('test.ftl', {
     YourName: ‘Jack’
