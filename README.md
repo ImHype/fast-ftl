@@ -1,6 +1,6 @@
 # Fast-FTL
 
-[![NPM version][npm-image]][npm-url]
+[![NPM version][npm-image]][npm-url][![Build Status][travis-image]][travis-url]
 
 The Freemaker parsing service in Node.js
 
@@ -51,3 +51,5 @@ fastFtl.parse('test.ftl', {
 [npm-image]: https://img.shields.io/npm/v/fast-ftl.svg
 [license-url]: https://github.com/ImHype/Fast-FTL/blob/master/LICENSE
 [license-image]: https://img.shields.io/github/license/imhype/Fast-FTL.svg
+[travis-image]: https://travis-ci.org/imhype/Fast-FTL.svg?branch=master
+[travis-url]: https://travis-ci.org/imhype/Fast-FTL
