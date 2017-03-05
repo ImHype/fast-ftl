@@ -2,20 +2,21 @@
 
 [![NPM version][npm-image]][npm-url]
 
+The Freemaker parsing service in Node.js
 
-> The Freemaker parsing service in Node.js
+[中文 README](./README-zh_CN.md)
 
 ## How to use
 ```bash
 npm i fast-ftl --save
 ```
-
-#### Import in es6
+#### Import 
+##### 1. Import in es2015+
 ```javascript
 import FastFTL from 'fast-ftl';
 ```
 
-#### Import in es5
+##### 2. Require in CommonJS
 ```javascript
 var FastFTL = require('fast-ftl').default;
 ```
@@ -37,6 +38,10 @@ fastFtl.parse('test.ftl', {
     console.log(e)
 });
 ```
+## Features
+1. Fast: use Socket to invoke Java Freemarker Parser, not in Teminal.
+2. Support MultiTemplate Directory.
+3. Simple API, base on Promise.
 
 ## LICENSE
 [![license][license-image]][license-url]
