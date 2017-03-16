@@ -5,7 +5,7 @@ import com.june.fastftl.model.Result;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.HashMap;
+import java.net.UnknownHostException;
 import java.util.Map;
 
 import org.json.simple.parser.JSONParser;
@@ -22,33 +22,45 @@ public class Server {
         ServerSocket serverSocket;
 
         try {
-            serverSocket = new ServerSocket(port);
-
+            serverSocket = new ServerSocket(port, 5);
+        } catch (UnknownHostException e) {
+            throw new Exception("[I] UnknownHostException is in used!");
         } catch (IOException e) {
             throw new Exception("[I] Port is in used!");
         }
 
         while (true) {
-            Socket socket = serverSocket.accept();
-            OutputStream outputStream = socket.getOutputStream();
-            PrintWriter printWriter = new PrintWriter(outputStream);
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-            String msg = bufferedReader.readLine();
+            Socket client = serverSocket.accept();
 
-            Result result = this.resolve(msg, render);
-            String _returnValue = result.toString();
-            printWriter.write(_returnValue);
+            InputStreamReader inSR = null;
+            OutputStreamWriter outSW = null;
 
             try {
-                printWriter.flush();
-                bufferedReader.close();
-                printWriter.close();
-                socket.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+                inSR = new InputStreamReader(client.getInputStream(), "UTF-8");
+                BufferedReader br = new BufferedReader(inSR);
 
+                outSW = new OutputStreamWriter(client.getOutputStream(), "UTF-8");
+                BufferedWriter bw = new BufferedWriter(outSW);
+
+                String msg = "";
+
+                while ((msg = br.readLine()) != null) {
+                    msg = msg.trim();
+
+                    Result result = this.resolve(msg, render);
+                    String returnValue = result.toString();
+                    bw.write(returnValue + " \r\n");
+                    bw.flush();
+                }
+            } finally {
+                assert inSR != null;
+                inSR.close();
+
+                assert outSW != null;
+                outSW.close();
+                client.close();
+            }
         }
     }
 
@@ -82,7 +94,7 @@ public class Server {
         return result;
     }
 
-    public Result reject (String msg){
+    public Result reject(String msg) {
         Result result = new Result("");
         result.setError(msg);
         return result;
