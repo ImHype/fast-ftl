@@ -24,7 +24,7 @@ var FastFTL = require("fast-ftl").default;
 #### Step 2 - Init Fast-FTL
 ```javascript
 var fastFtl = FastFTL({
-    root: [__dirname, `${__dirname}/pages`].join(",") // Support MultiTemplateLoader
+    root: [__dirname, `${__dirname}/pages`] // Support MultiTemplateLoader
 });
 ```
 

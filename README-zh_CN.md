@@ -26,7 +26,7 @@ var fastFtl = FastFTL({
     root: [
         __dirname, // 需要填写绝对路径
         path.join(__dirname, "") // 需要填写绝对路径
-    ].join(",") // 支持多 root 解析 "," 隔开
+    ] // 支持多 root 解析 ，传入 数组即可
 });
 ```
 

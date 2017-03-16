@@ -6,10 +6,14 @@ class Index extends Events {
     constructor({root}) {
         super();
         if (!root) {
-            throw new Error("root must be string");
+            throw new Error("root must need");
         }
-        builder(root)
-            .then(this.createRender.bind(this))
+
+        if (Array.isArray(root)) {
+            root = root.join(',');
+        }
+
+        builder(root).then(this.createRender.bind(this))
     }
 
     createRender(port) {
