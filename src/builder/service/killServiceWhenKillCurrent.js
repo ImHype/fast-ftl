@@ -1,11 +1,11 @@
 export default function killServiceWhenKillCurrent(service) {
-    const exitProcess = () => {
+    const whenKillCurrent = () => {
         try {
             service.kill('SIGHUP');
-            process.exit(0);
         } catch (e) {}
     };
-    process.on('SIGINT', exitProcess);
-    process.on('exit', exitProcess);
-    process.on('uncaughtException', exitProcess);
+
+    process.on('SIGINT', whenKillCurrent);
+    process.on('exit', whenKillCurrent);
+
 }
