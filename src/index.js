@@ -2,6 +2,7 @@ import RenderProxy from './render';
 import builder from './builder';
 import Events from 'events';
 import path from 'path';
+import {typeOf} from './util';
 
 class Index extends Events {
     constructor({root, paths}) {

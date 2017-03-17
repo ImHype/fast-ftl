@@ -23,12 +23,12 @@ export default class Render extends Events {
             JSON.stringify({template, data})
         );
         return new Promise((resolve, reject) => {
-            this.once(Render._getParsedEventName(template), info => {
-                if (info.error) {
-                    return reject(info.error);
+            this.once(Render._getParsedEventName(template), ({error, content}) => {
+                if (error) {
+                    return reject(error);
                 }
 
-                resolve(info.content || '');
+                resolve(content || '');
             });
         });
     }
