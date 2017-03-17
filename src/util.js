@@ -65,3 +65,18 @@ export function javaVersion() {
 export function typeOf(obj) {
     return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase();
 }
+
+export function greeting() {
+    const hours = new Date().getHours();
+    const man = `, sir!`;
+
+    if ( hours < 12 ) {
+        return `Good morning${man}`;
+    }
+
+    if (hours < 16 ) {
+        return `Good afternoon${man}`;
+    }
+
+    return `Good evening${man}`;
+}

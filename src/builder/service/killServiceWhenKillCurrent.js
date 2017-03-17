@@ -1,11 +1,20 @@
+import {log} from '../../util';
+
 export default function killServiceWhenKillCurrent(service) {
-    const whenKillCurrent = () => {
+    const whenExit = () => {
+        log('See u again!');
         try {
             service.kill('SIGHUP');
         } catch (e) {}
     };
 
-    process.on('SIGINT', whenKillCurrent);
-    process.on('exit', whenKillCurrent);
+    const whenSIGINT = () => {
+        try {
+            process.exit(0);
+        } catch (e) {}
+        whenExit();
+    };
 
+    process.on('SIGINT', whenSIGINT);
+    process.on('exit', whenExit);
 }

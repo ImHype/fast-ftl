@@ -15,10 +15,7 @@ export default class Render extends Events {
     }
 
     parse(template, data) {
-        /**
-         * win
-         * @type {*}
-         */
+        // Hack windows
         template = template.replace(/\\/g, '/');
         this.client.request(
             JSON.stringify({template, data})
@@ -29,7 +26,6 @@ export default class Render extends Events {
                     warning(error);
                     return reject(error);
                 }
-
                 resolve(content || '');
             });
         });
