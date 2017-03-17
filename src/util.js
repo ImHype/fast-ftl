@@ -6,7 +6,7 @@ import {spawn, execFile} from 'child_process';
 
 const isDev = process.env.NODE_ENV === 'development';
 
-function log(data) {
+export function log(data) {
     if (!isDev && (~data.indexOf('[D]'))) {
         return -1;
     }
@@ -19,7 +19,7 @@ function log(data) {
     return 0;
 }
 
-function findPort() {
+export function findPort() {
     return new Promise((resolve, reject) => {
         portfinder
             .getPort(function (err, port) {
@@ -32,13 +32,13 @@ function findPort() {
 }
 
 
-function invokeJar(jarFile, args) {
+export function invokeJar(jarFile, args) {
     return spawn('java', [
         '-jar', ...[jarFile, ...args]
     ]);
 }
 
-function javaVersion() {
+export function javaVersion() {
     return new Promise((resolve, reject) => {
         execFile('java', ['-version'], (e, result) => {
             if (e)
@@ -49,9 +49,6 @@ function javaVersion() {
     })
 }
 
-export {
-    log,
-    findPort,
-    invokeJar,
-    javaVersion
+export function typeOf(obj) {
+    return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase();
 }

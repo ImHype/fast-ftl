@@ -22,8 +22,14 @@ export default class Render extends Events {
         this.client.request(
             JSON.stringify({template, data})
         );
-        return new Promise(resolve => {
-            this.once(Render._getParsedEventName(template), resolve);
+        return new Promise((resolve, reject) => {
+            this.once(Render._getParsedEventName(template), info => {
+                if (info.error) {
+                    return reject(info.error);
+                }
+
+                resolve(info.content || '');
+            });
         });
     }
 

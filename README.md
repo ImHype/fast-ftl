@@ -8,29 +8,36 @@ The Freemaker parsing service in Node.js
 
 ## How to use
 ```bash
-npm i fast-ftl --save
+npm i fast-ftl -S
 ```
 #### Step 1 - Import 
 ##### 1. Import in es2015+
 ```javascript
-import FastFTL from "fast-ftl";
+import Render from "fast-ftl";
 ```
 
 ##### 2. Require in CommonJS
 ```javascript
-var FastFTL = require("fast-ftl").default;
+const {Render} = require("fast-ftl");
+```
+or
+```javascript
+var Render = require("fast-ftl").Render;
 ```
 
 #### Step 2 - Init Fast-FTL
 ```javascript
-var fastFtl = FastFTL({
-    root: [__dirname, `${__dirname}/pages`] // Support MultiTemplateLoader
+var render = Render({
+    root: path.join(__dirname, 'pages'), 
+    paths: [
+        path.join(__dirname, 'common')
+    ] // Support MultiTemplateLoader
 });
 ```
 
 #### Step 3 - Parse file
 ```javascript
-fastFtl.parse("test.ftl", {
+render.parse("test.ftl", {
     YourName: "Jack"
 }).then(data => {
     console.log(data);

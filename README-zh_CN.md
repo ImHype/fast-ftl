@@ -6,37 +6,39 @@
 
 ## 如何开始？
 ```bash
-npm i fast-ftl --save
+npm i fast-ftl -S
 ```
 ### 第 1 步、引入 
 #### 1. es2015+ 中引入
 ```javascript
-import FastFTL from "fast-ftl";
+import Render from "fast-ftl";
 ```
 
 #### 2. CommonJS 中引入
 ```javascript
-var FastFTL = require("fast-ftl").default;
+const {Render} = require("fast-ftl");
 ```
+或者
+```javascript
+var Render = require("fast-ftl").Render;
+```
+
 
 #### 第 2 步、初始化
 ```javascript
-var path = require("path");
-var fastFtl = FastFTL({
-    root: [
-        __dirname, // 需要填写绝对路径
-        path.join(__dirname, "") // 需要填写绝对路径
-    ] // 支持多 root 解析 ，传入 数组即可
+var render = Render({
+    root: path.join(__dirname, 'pages'), 
+    paths: [
+        path.join(__dirname, 'common') 
+    ]  // 支持多 root 解析，传入 数组即可, 排在前面的会优先查找
 });
 ```
 
 #### 第 3 步、调用
 ```javascript
-var relativeToRoot = "test.ftl"; // 相对 "root" 的路径
-var mockData = { 
-   YourName: "Jack" 
-};
-fastFtl.parse(relativeToRoot, mockData).then(data => {
+render.parse("test.ftl", {
+    YourName: "Jack"
+}).then(data => {
     console.log(data);
 }).catch(e => {
     console.log(e)
