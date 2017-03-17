@@ -8,6 +8,9 @@ The Freemaker parsing service in Node.js
 
 ![](http://note.youdao.com/yws/public/resource/e9a827d44244bc8b89eeb9bb0d3f9c3c/xmlnote/2B03796BC2624CA18FD89F593D67D36F/11721)
 
+## Process
+![](http://note.youdao.com/yws/public/resource/e9a827d44244bc8b89eeb9bb0d3f9c3c/xmlnote/2B03796BC2624CA18FD89F593D67D36F/11721)
+
 ## How to use
 ```bash
 npm i fast-ftl -S
