@@ -13,7 +13,7 @@ class Index extends Events {
         this.viewRoot = root;
 
         if (paths && typeOf(paths, 'array')) {
-            root = [root, ...paths].join(',');
+            root = [...paths, root].join(',');
         }
 
         builder(root).then(this.createRender.bind(this))
