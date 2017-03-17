@@ -3,20 +3,33 @@
  */
 import portfinder from 'portfinder';
 import {spawn, execFile} from 'child_process';
+import Logger from 'chalklog';
 
+const _log = new Logger('fast-ftl');
 const isDev = process.env.NODE_ENV === 'development';
 
 export function log(data) {
-    if (!isDev && (~data.indexOf('[D]'))) {
+    const output = data.toString('UTF-8').replace(/[.\n]+/,'');
+
+    if ((~data.indexOf('[D]'))) {
+        _log.blue(output);
         return -1;
     }
-    const output = data.toString('UTF-8').replace(/[.\n]+/,'');
 
     if (/^\s*$/g.test(output)) {
         return -1
     }
-    console.log(`[fast-ftl] ${output}`);
-    return 0;
+
+    _log.green(output);
+}
+
+export function error(msg) {
+    _log.red(msg);
+    process.exit(1);
+}
+
+export function warning(msg) {
+    _log.yellow(msg);
 }
 
 export function findPort() {

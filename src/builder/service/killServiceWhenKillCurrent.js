@@ -1,4 +1,3 @@
-import {log} from '../../util';
 export default function killServiceWhenKillCurrent(service) {
     const exitProcess = () => {
         try {

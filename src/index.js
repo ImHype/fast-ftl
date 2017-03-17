@@ -29,16 +29,20 @@ class Index extends Events {
 
     parse(template, data) {
 
-        const tpl = path.relative(this.viewRoot, template);
+        // 确保绝对路径
+        template = path.resolve(this.viewRoot, template);
+
+        // 绝对路径 => 相对 viewRoot 的路径
+        template = path.relative(this.viewRoot, template);
 
         if (!this.render) {
             return new Promise(resolve => {
                 this.once('started', () => {
-                    resolve(this.render.parse(tpl, data));
+                    resolve(this.render.parse(template, data));
                 });
             });
         }
-        return this.render.parse(tpl, data);
+        return this.render.parse(template, data);
     }
 }
 
