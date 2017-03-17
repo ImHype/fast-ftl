@@ -29,7 +29,7 @@ export function error(msg) {
 }
 
 export function warning(msg) {
-    _log.yellow(msg);
+    _log.red(msg);
 }
 
 export function findPort() {

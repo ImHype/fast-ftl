@@ -3,6 +3,7 @@
  */
 import Client from './client';
 import Events from 'events';
+import {warning} from '../util';
 
 export default class Render extends Events {
     constructor({port}) {
@@ -25,6 +26,7 @@ export default class Render extends Events {
         return new Promise((resolve, reject) => {
             this.once(Render._getParsedEventName(template), ({error, content}) => {
                 if (error) {
+                    warning(error);
                     return reject(error);
                 }
 
