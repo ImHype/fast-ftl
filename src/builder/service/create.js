@@ -1,5 +1,5 @@
 import {resolve} from 'path';
-import {invokeJar} from '../../util';
+import {invokeJar, log} from '../../util';
 import logServiceError from './logServiceError';
 import killServiceWhenKillCurrent from './killServiceWhenKillCurrent';
 
@@ -7,6 +7,7 @@ function serviceBuildPromise(service) {
     return new Promise(resolve => {
         service.stdout.on('data', data => {
             if (~data.indexOf('built')) {
+                log('fas-ftl is mounted');
                 setTimeout(resolve, 200);
             }
         });
