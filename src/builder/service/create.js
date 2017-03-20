@@ -9,7 +9,6 @@ function serviceBuildPromise(service) {
             if (~data.indexOf('built')) {
                 setTimeout(()=>{
                     resolve();
-                    log(greeting());
                 }, 200);
             }
         });

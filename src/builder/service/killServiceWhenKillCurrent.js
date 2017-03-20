@@ -2,7 +2,6 @@ import {log} from '../../util';
 
 export default function killServiceWhenKillCurrent(service) {
     const whenExit = () => {
-        log('See u again!');
         try {
             service.kill('SIGHUP');
         } catch (e) {}
