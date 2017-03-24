@@ -49,9 +49,11 @@ render.parse("test.ftl", {
 ```
 
 ## 特色
-1. 调用快，因为 `Fast-FTL` 通知 `Java` 解析是通过 `Socket` 通信的；而非使用命令行，需要经过 `Terminal` 调用，且每次只F初始化一遍 `Java` 对象
-2. 支持多 `root template directory` 的设定，排在前面的 `path` 会优先查找
-3. API 简易，基于 `Promise`，文件**encoding** 只支持 `utf-8` 
+1. 调用快，源于**Fast-FTL**的freemarker解析机制：  
+	在Java端建立Socket监听服务，Node.js将需要解析的模板和数据发送给Java端，Java端接收请求并进行解析后将结果返回给Node.js端。好处是，无重复初始化Freemarker自身类的开销，
+2. 支持多**root template directory**的设定：  
+	paths参数配置的目录下的文件，允许root下的模板直接通过 /xxx.ftl 的方式访问对应ftl，优先级按降序
+3. API 简易，基于 `Promise`，文件**encoding**只支持**utf-8** 
 
 ## LICENSE
 [![license][license-image]][license-url]
