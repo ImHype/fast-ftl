@@ -21,7 +21,7 @@ import java.util.Map;
  * Created by june on 2017/1/22.
  */
 
-public class Render {
+public final class Render {
 
     private Configuration config;
 

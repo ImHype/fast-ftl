@@ -11,7 +11,7 @@ import java.net.UnknownHostException;
  * Created by june on 2017/1/22.
  */
 @SuppressWarnings("InfiniteLoopStatement")
-public class Server {
+public final class Server {
 
     private final Render render;
 
