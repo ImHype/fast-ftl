@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
         Config config = new Config(args);
-        Render render = new Render(config.getRoot());
+        final Render render = new Render(config.getRoot());
 
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             @Override
