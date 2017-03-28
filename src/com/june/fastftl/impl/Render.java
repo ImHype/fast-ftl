@@ -1,20 +1,28 @@
 package com.june.fastftl.impl;
 
-import java.io.*;
-import java.util.*;
-
 import com.june.fastftl.model.Result;
-import com.june.fastftl.service.RenderService;
 import freemarker.cache.FileTemplateLoader;
 import freemarker.cache.MultiTemplateLoader;
 import freemarker.cache.TemplateLoader;
-import freemarker.template.*;
+import freemarker.template.Configuration;
+import freemarker.template.Template;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.StringWriter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by june on 2017/1/22.
  */
 
-public class Render implements RenderService {
+public class Render {
+
     private Configuration config;
 
     /**
@@ -64,5 +72,40 @@ public class Render implements RenderService {
 
     public Result render(String template) {
         return this.render(template, null);
+    }
+
+    @SuppressWarnings("unchecked")
+    public static Result resolve(String msg, Render render) {
+        Result result = new Result("");
+        result.setError("");
+        Map<String, Object> jsonObject;
+
+        JSONParser jsonParser = new JSONParser();
+
+        try {
+            jsonObject = (Map<String, Object>) jsonParser.parse(msg);
+        } catch (ParseException e) {
+            return reject(e.toString());
+        }
+
+        String template = String.valueOf(jsonObject.get("template"));
+
+        Map<String, Object> mockData;
+        try {
+            mockData = (Map<String, Object>) jsonObject.get("data");
+            if (mockData != null)
+                result = render.render(template, mockData);
+            else
+                throw new Exception("[I] No Mock Data");
+        } catch (Exception e) {
+            result = render.render(template);
+        }
+        return result;
+    }
+
+    public static Result reject(String msg) {
+        Result result = new Result("");
+        result.setError(msg);
+        return result;
     }
 }
