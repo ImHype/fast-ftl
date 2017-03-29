@@ -26,7 +26,7 @@ public class Config {
     public Config(String[] args) throws Exception {
         switch (args.length) {
             case 0:
-                throw new Exception("Firt argument must need. it's your root");
+                throw new Exception("First argument must need. it's your root");
             case 1:
                 throw new Exception("Second argument must need. it's your port");
             default:
