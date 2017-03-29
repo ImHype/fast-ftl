@@ -5,9 +5,6 @@ package com.june.fastftl;
  */
 public class ClientTest {
     public static void main(String[] args) {
-        int i = 0;
-        while (i++ < 100) {
-            new Client().request(8005, "{\"template\":\"test.ftl\",\"data\":{\"a\": \"Hello\"}}");
-        }
+        new Client().request(8005, "{\"template\":\"test.ftl\",\"data\":{\"num\": \"1000000000.0\"}}");
     }
 }
