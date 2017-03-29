@@ -40,6 +40,13 @@ var render = Render({
 });
 ```
 
+| property | Fast-FTL | defaultValue
+| ------| ------ | ------ | ------ |
+| default_encoding | defaultEncoding | utf-8 |
+| url_escaping_charset | urlEscapingCharsetSet | utf-8 |
+| number_format | numberFormat | 0.########## |
+
+
 #### 第 3 步、调用
 ```javascript
 render.parse("test.ftl", {

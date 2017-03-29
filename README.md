@@ -41,11 +41,11 @@ var render = Render({
 });
 ```
 
-| property | Fast-FTL | Spring | defaultValue
+| property | Fast-FTL | defaultValue
 | ------| ------ | ------ | ------ |
-| defaultEncoding | defaultEncoding | default_encoding | utf-8 |
-| urlEscapingCharsetSet | urlEscapingCharsetSet | url_escaping_charset | utf-8 |
-| numberFormat | numberFormat | number_format | 0.########## |
+| default_encoding | defaultEncoding | utf-8 |
+| url_escaping_charset | urlEscapingCharsetSet | utf-8 |
+| number_format | numberFormat | 0.########## |
 
 #### Step 3 - Parse file
 ```javascript
