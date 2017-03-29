@@ -36,10 +36,16 @@ var render = Render({
         path.join(__dirname, 'common')
     ], // Support MultiTemplateLoader
     defaultEncoding: "utf-8", 	 // 默认 encoding
-    URLEscapingCharset: "utf-8", // URLEscapingCharset
+    urlEscapingCharsetSet: "utf-8", // URLEscapingCharset
     numberFormat: "0.##########" // 数字格式化方式
 });
 ```
+
+| property | Fast-FTL | Spring | defaultValue
+| ------| ------ | ------ | ------ |
+| defaultEncoding | defaultEncoding | default_encoding | utf-8 |
+| urlEscapingCharsetSet | urlEscapingCharsetSet | url_escaping_charset | utf-8 |
+| numberFormat | numberFormat | number_format | 0.########## |
 
 #### Step 3 - Parse file
 ```javascript
