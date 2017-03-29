@@ -41,8 +41,8 @@ var render = Render({
 });
 ```
 
-| property | Fast-FTL | defaultValue
-| ------| ------ | ------ | ------ |
+| property | Fast-FTL | defaultValue|
+| ------| ------ | ------ |
 | default_encoding | defaultEncoding | utf-8 |
 | url_escaping_charset | urlEscapingCharsetSet | utf-8 |
 | number_format | numberFormat | 0.########## |
