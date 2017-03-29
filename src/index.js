@@ -5,19 +5,27 @@ import path from 'path';
 import {typeOf} from './util';
 
 class Index extends Events {
-    constructor({root, paths}) {
+    constructor(options) {
         super();
+
+        // 透传 Jar 包
+        let {root, paths, defaultEncoding, URLEscapingCharset, numberFormat} = options;
+
         if (!root) {
             throw new Error("root must need");
         }
 
         this.viewRoot = root;
 
-        if (paths && typeOf(paths, 'array')) {
+        if (paths) {
+            if (!typeOf(paths, 'array')) {
+                paths = [paths];
+            }
+
             root = [...paths, root].join(',');
         }
 
-        builder(root).then(this.createRender.bind(this))
+        builder({root, defaultEncoding, URLEscapingCharset, numberFormat}).then(this.createRender.bind(this))
     }
 
     createRender(port) {

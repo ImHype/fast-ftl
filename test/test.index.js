@@ -6,7 +6,10 @@ var path = require('path');
 var expect = require('chai').expect;
 var {Render} = require('../dist/index');
 var fastFtl = Render({
-    root: __dirname
+    root: __dirname, // 根路径
+    defaultEncoding: "utf-8", // 默认 encoding
+    URLEscapingCharset: "utf-8", // URLEscapingCharset
+    numberFormat: "0.##########" // 数字格式化方式
 });
 
 describe('parse', function () {

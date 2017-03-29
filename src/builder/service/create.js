@@ -15,17 +15,18 @@ function serviceBuildPromise(service) {
     });
 }
 
-function createService(args) {
-   const jarFile = resolve(__dirname, '../../../lib/Fast-FTL.jar');
-    return invokeJar(jarFile, args);
+function createService(options) {
+    const jarFile = resolve(__dirname, '../../../lib/Fast-FTL.jar');
+    // console.log(options)
+    return invokeJar(jarFile, [options]);
 }
 
 /**
  * root
  * port
  */
-export default function (...args) {
-    const service = createService(args);
+export default function (options) {
+    const service = createService(JSON.stringify(options));
     killServiceWhenKillCurrent(service);
     logServiceError(service);
     return serviceBuildPromise(service);

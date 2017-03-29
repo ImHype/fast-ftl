@@ -34,7 +34,10 @@ var render = Render({
     root: path.join(__dirname, 'pages'), 
     paths: [
         path.join(__dirname, 'common')
-    ] // Support MultiTemplateLoader
+    ], // Support MultiTemplateLoader
+    defaultEncoding: "utf-8", 	 // 默认 encoding
+    URLEscapingCharset: "utf-8", // URLEscapingCharset
+    numberFormat: "0.##########" // 数字格式化方式
 });
 ```
 
