@@ -9,7 +9,7 @@ class Index extends Events {
         super();
 
         // 透传 Jar 包
-        let {root, paths, defaultEncoding, URLEscapingCharset, numberFormat} = options;
+        let {root, paths, defaultEncoding, URLEscapingCharset, numberFormat, templateUpdateDelay} = options;
 
         if (!root) {
             throw new Error("root must need");
@@ -25,7 +25,7 @@ class Index extends Events {
             root = [...paths, root].join(',');
         }
 
-        builder({root, defaultEncoding, URLEscapingCharset, numberFormat}).then(this.createRender.bind(this))
+        builder({root, defaultEncoding, URLEscapingCharset, numberFormat, templateUpdateDelay}).then(this.createRender.bind(this))
     }
 
     createRender(port) {

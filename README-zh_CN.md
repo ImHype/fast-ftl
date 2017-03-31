@@ -35,8 +35,9 @@ var render = Render({
         path.join(__dirname, 'common')
     ], // Support MultiTemplateLoader
     defaultEncoding: "utf-8", 	 // 默认 encoding
-    URLEscapingCharset: "utf-8", // URLEscapingCharset
-    numberFormat: "0.##########" // 数字格式化方式
+    urlEscapingCharsetSet: "utf-8", // URLEscapingCharset
+    numberFormat: "0.##########", // 数字格式化方式
+    templateUpdateDelay: 0 // milliseconds 为单位
 });
 ```
 
@@ -45,6 +46,7 @@ var render = Render({
 | default_encoding | defaultEncoding | utf-8 |
 | url_escaping_charset | urlEscapingCharsetSet | utf-8 |
 | number_format | numberFormat | 0.########## |
+| template_update_delay(Milliseconds)| templateUpdateDelay | 0 |
 
 
 #### 第 3 步、调用
