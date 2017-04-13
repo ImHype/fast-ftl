@@ -1,7 +1,7 @@
 /**
  * Created by june on 2017/1/23.
  */
-"use strict";
+'use strict';
 var expect = require('chai').expect;
 var util = require('../lib/util');
 
@@ -15,7 +15,6 @@ describe('util', function () {
         });
     });
 
-
     describe('#findPortExclude', function () {
         it('should be one port and exclude 8000', function (done) {
             util.findPortExclude(8000).then(function (port) {
@@ -24,5 +23,4 @@ describe('util', function () {
             });
         });
     });
-
 });
