@@ -2,6 +2,9 @@
 	"name": "fast-ftl",
 	"version": "1.7.1",
 	"description": "The Freemaker parsing service in Node.js",
+	"engines": {
+		"node": ">=6.4.0"
+	},
 	"files": [
 		"dist",
 		"lib/Fast-FTL.jar",
@@ -13,7 +16,7 @@
 	],
 	"scripts": {
 		"release": "npm run build && npm publish",
-		"test": "mocha test/test.index"
+		"test": "eslint ./lib"
 	},
 	"main": "lib/index",
 	"devDependencies": {
