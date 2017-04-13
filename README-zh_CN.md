@@ -157,7 +157,7 @@ render.parse("test.ftl", {
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-| [<img src="https://avatars3.githubusercontent.com/u/10825163?v=3" width="80px;"/><br /><sub>君羽</sub>](https://github.com/imhype)<br />[💻](https://github.com/kaola-fed/foxman/commits?author=ImHype) 🔌 🚇 [📖](https://github.com/kaola-fed/foxman/commits?author=ImHype)<br> [⚠️](https://github.com/kaola-fed/foxman/commits?author=ImHype) [🐛](https://github.com/kaola-fed/foxman/issues?q=author%3AImHype) 💡 | [<img src="https://avatars0.githubusercontent.com/u/12047600?v=3&s=400" width="80px;"/><br /><sub>carryxyh</sub>](https://github.com/carryxyh)<br />[💻](https://github.com/imhype/fast-ftl/commits/java?author=carryxyh) <br><br> |
+| [<img src="https://avatars3.githubusercontent.com/u/10825163?v=3" width="80px;"/><br /><sub>君羽</sub>](https://github.com/imhype)<br />[💻](https://github.com/imhype/fast-ftl/commits?author=ImHype) 🔌 🚇 [📖](https://github.com/imhype/fast-ftl/commits?author=ImHype)<br> [⚠️](https://github.com/imhype/fast-ftl/commits?author=ImHype) [🐛](https://github.com/imhype/fast-ftl/issues?q=author%3AImHype) 💡 | [<img src="https://avatars0.githubusercontent.com/u/12047600?v=3&s=400" width="80px;"/><br /><sub>carryxyh</sub>](https://github.com/carryxyh)<br />[💻](https://github.com/imhype/fast-ftl/commits/java?author=carryxyh) <br><br> |
 | :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
