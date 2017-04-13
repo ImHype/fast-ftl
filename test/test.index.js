@@ -14,7 +14,7 @@ var fastFtl = Render({
 
 describe('parse', function () {
     it('相对路径 parse', function (done) {
-        fastFtl.parse('test.ftl', {
+        fastFtl.parse('fixtures/test.ftl', {
             name: "Jack"
         }).then(data => {
             expect(/你好, Jack/g.test(data)).to.be.equal(!!1);
@@ -25,7 +25,7 @@ describe('parse', function () {
     });
 
     it('绝对路径 parse', function (done) {
-        fastFtl.parse(path.join(__dirname, 'test.ftl'), {
+        fastFtl.parse(path.join(__dirname, 'fixtures', 'test.ftl'), {
             name: "Jack"
         }).then(data => {
             expect(/你好, Jack/g.test(data)).to.be.equal(!!1);
