@@ -1,6 +1,28 @@
-# Fast-FTL
+<div align="center">
+  <h1>fast-ftl</h1>
 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
+  <a href="https://www.npmjs.com/package/fast-ftl">
+    <img src="https://img.shields.io/npm/v/fast-ftl.svg?style=flat-square" alt="NPM version">
+  </a>
+  <a href="https://travis-ci.org/imhype/fast-ftl">
+    <img src="https://travis-ci.org/ImHype/Fast-FTL.svg?branch=master" alt="build">
+  </a>
+  <!--<a href="https://codecov.io/gh/imhype/fast-ftl">
+    <img src="https://img.shields.io/codecov/c/github/imhype/fast-ftl.svg?style=flat-square" alt="build">
+  </a>-->
+  <a href="https://www.npmjs.com/package/fast-ftl">
+    <img src="https://img.shields.io/npm/dm/fast-ftl.svg?style=flat-square" alt="download">
+  </a>
+  <a href="https://nodejs.org">
+    <img src="https://img.shields.io/node/v/fast-ftl.svg?style=flat-square" alt="node">
+  </a>
+  <a href="https://github.com/imhype/fast-ftl/blob/master/CODE_OF_CONDUCT.md">
+    <img src="https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square" alt="Code of Conduct">
+  </a>
+  <a href="https://github.com/imhype/fast-ftl/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/imhype/fast-ftl.svg?style=flat-square" alt="license">
+  </a>
+</div>
 
 The Freemaker parsing service in Node.js
 
@@ -64,9 +86,16 @@ render.parse("test.ftl", {
 2. Support MultiTemplate Directory.
 3. Simple API, base on Promise.
 
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+| [<img src="https://avatars3.githubusercontent.com/u/10825163?v=3" width="80px;"/><br /><sub>君羽</sub>](https://github.com/imhype)<br />[💻](https://github.com/kaola-fed/foxman/commits?author=ImHype) 🔌 🚇 [📖](https://github.com/kaola-fed/foxman/commits?author=ImHype)<br> [⚠️](https://github.com/kaola-fed/foxman/commits?author=ImHype) [🐛](https://github.com/kaola-fed/foxman/issues?q=author%3AImHype) 💡 | [<img src="https://avatars0.githubusercontent.com/u/12047600?v=3&s=400" width="80px;"/><br /><sub>carryxyh</sub>](https://github.com/carryxyh)<br />[💻](https://github.com/imhype/fast-ftl/commits/java?author=carryxyh) <br><br> |
+| :---: | :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+
 ## LICENSE
 [![license][license-image]][license-url]
-
 
 [npm-url]: https://npmjs.org/package/fast-ftl
 [npm-image]: https://img.shields.io/npm/v/fast-ftl.svg
