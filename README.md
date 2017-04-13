@@ -98,7 +98,3 @@ render.parse("test.ftl", {
 
 [npm-url]: https://npmjs.org/package/fast-ftl
 [npm-image]: https://img.shields.io/npm/v/fast-ftl.svg
-[license-url]: https://github.com/ImHype/Fast-FTL/blob/master/LICENSE
-[license-image]: https://img.shields.io/github/license/imhype/Fast-FTL.svg
-[travis-image]: https://travis-ci.org/ImHype/Fast-FTL.svg?branch=master
-[travis-url]: https://travis-ci.org/ImHype/Fast-FTL

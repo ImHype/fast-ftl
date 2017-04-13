@@ -160,11 +160,8 @@ render.parse("test.ftl", {
 | [<img src="https://avatars3.githubusercontent.com/u/10825163?v=3" width="80px;"/><br /><sub>君羽</sub>](https://github.com/imhype)<br />[💻](https://github.com/imhype/fast-ftl/commits?author=ImHype) 🔌 🚇 [📖](https://github.com/imhype/fast-ftl/commits?author=ImHype)<br> [⚠️](https://github.com/imhype/fast-ftl/commits?author=ImHype) [🐛](https://github.com/imhype/fast-ftl/issues?q=author%3AImHype) 💡 | [<img src="https://avatars0.githubusercontent.com/u/12047600?v=3&s=400" width="80px;"/><br /><sub>carryxyh</sub>](https://github.com/carryxyh)<br />[💻](https://github.com/imhype/fast-ftl/commits/java?author=carryxyh) <br><br> |
 | :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-
-
 ## LICENSE
 [![license][license-image]][license-url]
-
 
 [license-url]: https://github.com/ImHype/Fast-FTL/blob/master/LICENSE
 [license-image]: https://img.shields.io/github/license/imhype/Fast-FTL.svg
