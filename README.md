@@ -1,6 +1,6 @@
 <div align="center">
   <h1>fast-ftl</h1>
-
+  <p>The Freemaker parsing service in Node.js</p>
   <a href="https://www.npmjs.com/package/fast-ftl">
     <img src="https://img.shields.io/npm/v/fast-ftl.svg?style=flat-square" alt="NPM version">
   </a>
@@ -24,7 +24,6 @@
   </a>
 </div>
 
-The Freemaker parsing service in Node.js
 
 [中文 README](./README-zh_CN.md)
 

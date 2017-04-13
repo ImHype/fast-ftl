@@ -1,6 +1,6 @@
 <div align="center">
   <h1>fast-ftl</h1>
-
+  <p>基于 Socket 服务的 Freemarker 解析器</p>
   <a href="https://www.npmjs.com/package/fast-ftl">
     <img src="https://img.shields.io/npm/v/fast-ftl.svg?style=flat-square" alt="NPM version">
   </a>
@@ -24,7 +24,7 @@
   </a>
 </div>
 
-基于 Socket 服务的 Freemarker 解析器
+
 
 ## 过程原理图
 ![](http://note.youdao.com/yws/public/resource/e9a827d44244bc8b89eeb9bb0d3f9c3c/xmlnote/2B03796BC2624CA18FD89F593D67D36F/11721)
