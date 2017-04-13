@@ -4,7 +4,7 @@
 "use strict";
 var path = require('path');
 var expect = require('chai').expect;
-var {Render} = require('../dist/index');
+var {Render} = require('../lib/index');
 var fastFtl = Render({
     root: __dirname, // 根路径
     defaultEncoding: "utf-8", // 默认 encoding
