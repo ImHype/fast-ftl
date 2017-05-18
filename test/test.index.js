@@ -11,12 +11,13 @@ var fastFtl = Render({
     URLEscapingCharset: 'utf-8', // URLEscapingCharset
     numberFormat: '0.##########' // 数字格式化方式
 });
-
+//
 describe('parse', function () {
     it('相对路径 parse', function (done) {
         fastFtl.parse('fixtures/test.ftl', {
             name: 'Jack'
         }).then(data => {
+            console.log(data)
             expect(/你好, Jack/g.test(data)).to.be.equal(!!1);
             done();
         }).catch(e => {
@@ -28,6 +29,7 @@ describe('parse', function () {
         fastFtl.parse(path.join(__dirname, 'fixtures', 'test.ftl'), {
             name: 'Jack'
         }).then(data => {
+            console.log(data)
             expect(/你好, Jack/g.test(data)).to.be.equal(!!1);
             done();
         }).catch(e => {
