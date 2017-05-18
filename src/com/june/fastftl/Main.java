@@ -22,7 +22,6 @@ public class Main {
             }
         }));
 
-        System.out.printf("[D] built in " + config.getPort());
         new Server(config.getPort(), render).start();
     }
 }

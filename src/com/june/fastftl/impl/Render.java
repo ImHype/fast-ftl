@@ -2,6 +2,7 @@ package com.june.fastftl.impl;
 
 import com.june.fastftl.model.Config;
 import com.june.fastftl.model.Result;
+import com.june.fastftl.service.RenderService;
 import freemarker.cache.FileTemplateLoader;
 import freemarker.cache.MultiTemplateLoader;
 import freemarker.cache.TemplateLoader;
@@ -19,19 +20,16 @@ import java.util.*;
  * Created by june on 2017/1/22.
  */
 
-public final class Render {
+public final class Render implements RenderService {
 
     private Configuration config;
 
-    /**
-     * 分隔符 ","
-     * @param cfg
-     */
     public Render(Config cfg) {
         config = new Configuration(Configuration.VERSION_2_3_0);
         config.setDefaultEncoding(cfg.getDefaultEncoding());
         config.setNumberFormat(cfg.getNumberFormat());
         config.setURLEscapingCharset(cfg.getURLEscapingCharset());
+        config.setTemplateUpdateDelayMilliseconds(cfg.getTemplateUpdateDelayMilliseconds());
         config.setTemplateLoader(this.getTemplateLoader(cfg.getRoot()));
     }
 
@@ -59,7 +57,8 @@ public final class Render {
         );
     }
 
-    private Result render(String template, Map mockData) {
+    @Override
+    public Result render(String template, Map mockData) {
         Result result = new Result(template);
         HashMap emptyMap = new HashMap();
         StringWriter sw = new StringWriter();
@@ -74,17 +73,19 @@ public final class Render {
         return result;
     }
 
-    private Result render(String template) {
+    @Override
+    public Result render(String template) {
         return this.render(template, null);
     }
 
     @SuppressWarnings("unchecked")
     public static Result resolve(String msg, Render render) {
-        Result result = new Result("");
-        result.setError("");
-        Map<String, Object> jsonObject;
-
         JSONParser jsonParser = new JSONParser();
+        Result result;
+        Map<String, Object> jsonObject;
+        String signture;
+        String template;
+        Map<String, Object> mockData;
 
         try {
             jsonObject = (Map<String, Object>) jsonParser.parse(msg);
@@ -92,23 +93,31 @@ public final class Render {
             return reject(e.toString());
         }
 
-        String template = String.valueOf(jsonObject.get("template"));
+        template = String.valueOf(jsonObject.get("template"));
 
-        Map<String, Object> mockData;
         try {
             mockData = (Map<String, Object>) jsonObject.get("data");
-            if (mockData != null)
-                result = render.render(template, mockData);
+            if (mockData == null)
+                throw new Exception("Missing render data");
             else
-                throw new Exception("[I] No Mock Data");
+                result = render.render(template, mockData);
         } catch (Exception e) {
             result = render.render(template);
         }
+
+        signture = String.valueOf(jsonObject.get("signture"));
+
+        if (signture == null) {
+            result.setError("Missing signture");
+            return result;
+        }
+
+        result.setSignture(signture);
         return result;
     }
 
     private static Result reject(String msg) {
-        Result result = new Result("");
+        Result result = new Result();
         result.setError(msg);
         return result;
     }

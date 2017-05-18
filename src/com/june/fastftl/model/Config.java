@@ -25,6 +25,9 @@ public class Config {
     // 数字格式化方式
     private String numberFormat = "0.##########";
 
+    // template_update_delay
+    private long templateUpdateDelayMilliseconds = 0;
+
 
     public Config(String[] args) throws Exception {
         String msg = args[0];
@@ -53,6 +56,10 @@ public class Config {
 
         if (jsonObject.get("numberFormat") != null) {
             setNumberFormat((String) jsonObject.get("numberFormat"));
+        }
+
+        if (jsonObject.get("templateUpdateDelay") != null) {
+            setTemplateUpdateDelayMilliseconds((long) jsonObject.get("templateUpdateDelay"));
         }
     }
 
@@ -96,4 +103,13 @@ public class Config {
     private void setNumberFormat(String numberFormat) {
         this.numberFormat = numberFormat;
     }
+
+    public long getTemplateUpdateDelayMilliseconds() {
+        return templateUpdateDelayMilliseconds;
+    }
+
+    public void setTemplateUpdateDelayMilliseconds(long templateUpdateDelayMilliseconds) {
+        this.templateUpdateDelayMilliseconds = templateUpdateDelayMilliseconds;
+    }
+
 }

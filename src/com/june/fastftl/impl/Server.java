@@ -28,10 +28,12 @@ public final class Server {
         try {
             serverSocket = new ServerSocket(port, 5);
         } catch (UnknownHostException e) {
-            throw new Exception("[I] UnknownHostException is in used!");
+            throw new Exception("UnknownHostException is in used!");
         } catch (IOException e) {
-            throw new Exception("[I] Port is in used!");
+            throw new Exception("Port is in used!");
         }
+
+        System.out.printf("Socket Server is built");
 
         while (true) {
             Socket client = serverSocket.accept();
