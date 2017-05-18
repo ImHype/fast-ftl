@@ -1,6 +1,6 @@
 {
 	"name": "fast-ftl",
-	"version": "1.7.1",
+	"version": "1.8.0",
 	"description": "The Freemaker parsing service in Node.js",
 	"engines": {
 		"node": ">=6.4.0"
