@@ -1,16 +1,13 @@
 {
 	"name": "fast-ftl",
-	"version": "1.8.0",
+	"version": "1.8.2",
 	"description": "The Freemaker parsing service in Node.js",
 	"engines": {
 		"node": ">=6.4.0"
 	},
 	"files": [
-		"dist",
-		"lib/Fast-FTL.jar",
-		"lib/fastjson-1.1.30.jar",
-		"lib/freemarker.jar",
-		"lib/json-simple-1.1.jar",
+		"lib/",
+		"jar/",
 		"LICENSE",
 		"README.md"
 	],
