@@ -1,29 +1,29 @@
 {
-	"name": "fast-ftl",
-	"version": "1.7.1",
-	"description": "The Freemaker parsing service in Node.js",
-	"engines": {
-		"node": ">=6.4.0"
-	},
-	"files": [
-		"dist",
-		"lib/Fast-FTL.jar",
-		"lib/fastjson-1.1.30.jar",
-		"lib/freemarker.jar",
-		"lib/json-simple-1.1.jar",
-		"LICENSE",
-		"README.md"
-	],
-	"scripts": {
-		"release": "npm run build && npm publish",
-		"test": "eslint ./lib"
-	},
-	"main": "lib/index",
-	"devDependencies": {
-		"chai": "^3.5.0"
-	},
-	"dependencies": {
-		"chalklog": "^1.1.2",
-		"get-port": "^3.1.0"
-	}
+  "name": "fast-ftl",
+  "version": "1.7.2",
+  "description": "The Freemaker parsing service in Node.js",
+  "engines": {
+    "node": ">=6.4.0"
+  },
+  "files": [
+    "dist",
+    "lib/Fast-FTL.jar",
+    "lib/fastjson-1.1.30.jar",
+    "lib/freemarker.jar",
+    "lib/json-simple-1.1.jar",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "release": "npm run build && npm publish",
+    "test": "eslint ./lib"
+  },
+  "main": "lib/index",
+  "devDependencies": {
+    "chai": "^3.5.0"
+  },
+  "dependencies": {
+    "chalklog": "^1.1.2",
+    "get-port": "^3.1.0"
+  }
 }
